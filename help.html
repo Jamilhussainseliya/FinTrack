@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Guide - FinTrack</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <svg viewBox="0 0 80 80">
+                <circle id="loader-circle" cx="40" cy="40" r="32"></circle>
+            </svg>
+            <div class="loader-text">FinTrack</div>
+        </div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="toggle-ball"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-chart-line logo-icon"></i>
+                <h1>FinTrack</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="budgeting.html">Budgeting</a></li>
+                    <li><a href="debt-management.html">Debt</a></li>
+                    <li><a href="investment.html">Investment</a></li>
+                    <li><a href="help.html" class="active">Help</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="budgeting.html">Budgeting</a></li>
+            <li><a href="debt-management.html">Debt Management</a></li>
+            <li><a href="investment.html">Investment</a></li>
+            <li><a href="help.html" class="active">Help & Guide</a></li>
+        </ul>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Help & User Guide</h1>
+            <p>Learn how to use FinTrack's tools to manage your finances effectively</p>
+        </div>
+    </section>
+
+    <!-- Help Content -->
+    <section class="help-content">
+        <div class="container">
+            <div class="help-sidebar">
+                <div class="sidebar-header">
+                    <h3>Contents</h3>
+                </div>
+                <ul class="sidebar-nav">
+                    <li><a href="#getting-started" class="active">Getting Started</a></li>
+                    <li><a href="#budget-planner">Budget Planner</a></li>
+                    <li><a href="#debt-calculator">Debt Calculator</a></li>
+                    <li><a href="#investment-calculator">Investment Calculator</a></li>
+                    <li><a href="#data-storage">Data Storage</a></li>
+                    <li><a href="#privacy">Privacy & Security</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#troubleshooting">Troubleshooting</a></li>
+                </ul>
+                <div class="sidebar-cta">
+                    <p>Need more help?</p>
+                    <a href="mailto:support@fintrack.com" class="btn btn-primary btn-sm">Contact Support</a>
+                </div>
+            </div>
+            <div class="help-main">
+                <section id="getting-started" class="help-section">
+                    <h2>Getting Started with FinTrack</h2>
+                    <p>Welcome to FinTrack, your personal finance companion! This guide will help you understand how to use our tools to manage your finances effectively.</p>
+                    
+                    <div class="help-card">
+                        <h3>What is FinTrack?</h3>
+                        <p>FinTrack is a comprehensive personal finance tool that helps you track your income, expenses, debt, and investments. Our goal is to provide you with the tools you need to take control of your financial future.</p>
+                        <div class="help-image">
+                            <img src="images/help-overview.jpg" alt="FinTrack Overview">
+                        </div>
+                    </div>
+                    
+                    <div class="help-card">
+                        <h3>Key Features</h3>
+                        <ul class="feature-list">
+                            <li>
+                                <i class="fas fa-wallet"></i>
+                                <div>
+                                    <h4>Budget Planner</h4>
+                                    <p>Track your income and expenses to create a monthly budget.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-credit-card"></i>
+                                <div>
+                                    <h4>Debt Calculator</h4>
+                                    <p>Plan your debt repayment strategy using avalanche or snowball methods.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-chart-line"></i>
+                                <div>
+                                    <h4>Investment Calculator</h4>
+                                    <p>Project your investment growth over time with compound interest.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-shield-alt"></i>
+                                <div>
+                                    <h4>Privacy-Focused</h4>
+                                    <p>All your data is stored locally on your device, not on our servers.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="help-card">
+                        <h3>Navigation Guide</h3>
+                        <p>FinTrack is designed to be intuitive and easy to navigate. Here's a quick overview of the main sections:</p>
+                        <ul>
+                            <li><strong>Home:</strong> Overview of all features and quick budget calculator</li>
+                            <li><strong>Budgeting:</strong> Detailed budget planner with income and expense tracking</li>
+                            <li><strong>Debt Management:</strong> Tools for planning debt repayment strategies</li>
+                            <li><strong>Investment:</strong> Calculator for projecting investment growth</li>
+                            <li><strong>Help:</strong> Comprehensive guide and FAQs (you are here)</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section id="budget-planner" class="help-section">
+                    <h2>Budget Planner Guide</h2>
+                    <p>The Budget Planner helps you track your income and expenses to create a balanced monthly budget.</p>
+                    
+                    <div class="help-card">
+                        <h3>How to Use the Budget Planner</h3>
+                        <div class="step-guide">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Add Income Sources</h4>
+                                    <p>Click on the "Income" tab and add all your income sources (salary, freelance work, etc.).</p>
+                                    <div class="help-image">
+                                        <img src="images/budget-income.jpg" alt="Adding Income">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Add Expenses</h4>
+                                    <p>Switch to the "Expenses" tab and add your monthly expenses by category (housing, food, transportation, etc.).</p>
+                                    <div class="help-image">
+                                        <img src="images/budget-expenses.jpg" alt="Adding Expenses">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Review Budget Summary</h4>
+                                    <p>The Budget Summary section will automatically calculate your total income, expenses, and balance.</p>
+                                    <div class="help-image">
+                                        <img src="images/budget-summary.jpg" alt="Budget Summary">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Save Your Budget</h4>
+                                    <p>Click the "Save Budget" button to store your budget data locally on your device.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="help-card">
+                        <h3>Understanding the Budget Chart</h3>
+                        <p>The pie chart in the Budget Summary shows the breakdown of your expenses by category. This visual representation helps you identify where your money is going and which areas you might need to adjust.</p>
+                        <div class="help-image">
+                            <img src="images/budget-chart.jpg" alt="Budget Chart">
+                        </div>
+                        <div class="tip-box">
+                            <div class="tip-icon"><i class="fas fa-lightbulb"></i></div>
+                            <div class="tip-content">
+                                <h4>Pro Tip</h4>
+                                <p>Aim to keep your essential expenses (housing, food, utilities) under 50% of your income for a balanced budget.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="debt-calculator" class="help-section">
+                    <h2>Debt Calculator Guide</h2>
+                    <p>The Debt Calculator helps you plan your debt repayment strategy to become debt-free faster.</p>
+                    
+                    <div class="help-card">
+                        <h3>How to Use the Debt Calculator</h3>
+                        <div class="step-guide">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Add Your Debts</h4>
+                                    <p>Enter the details of each debt including name, current balance, interest rate, and minimum payment.</p>
+                                    <div class="help-image">
+                                        <img src="images/debt-add.jpg" alt="Adding Debts">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Choose a Repayment Strategy</h4>
+                                    <p>Select either the Avalanche method (highest interest first) or Snowball method (smallest balance first).</p>
+                                    <div class="help-image">
+                                        <img src="images/debt-strategy.jpg" alt="Repayment Strategy">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Add Extra Payment (Optional)</h4>
+                                    <p>If you can afford to pay more than the minimum payments, enter an additional amount to accelerate your debt payoff.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Calculate Payoff</h4>
+                                    <p>Click "Calculate Payoff" to see how long it will take to become debt-free and how much interest you'll pay.</p>
+                                    <div class="help-image">
+                                        <img src="images/debt-results.jpg" alt="Debt Payoff Results">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="help-card">
+                        <h3>Avalanche vs. Snowball Method</h3>
+                        <div class="comparison-table">
+                            <div class="comparison-item">
+                                <div class="comparison-header">
+                                    <i class="fas fa-mountain"></i>
+                                    <h4>Avalanche Method</h4>
+                                </div>
+                                <div class="comparison-content">
+                                    <p><strong>How it works:</strong> Pay minimum on all debts, then put extra money toward the debt with the highest interest rate.</p>
+                                    <p><strong>Best for:</strong> Minimizing the total interest paid and becoming debt-free faster mathematically.</p>
+                                    <p><strong>Advantage:</strong> Saves the most money in interest over time.</p>
+                                </div>
+                            </div>
+                            <div class="comparison-item">
+                                <div class="comparison-header">
+                                    <i class="fas fa-snowflake"></i>
+                                    <h4>Snowball Method</h4>
+                                </div>
+                                <div class="comparison-content">
+                                    <p><strong>How it works:</strong> Pay minimum on all debts, then put extra money toward the debt with the smallest balance.</p>
+                                    <p><strong>Best for:</strong> Building momentum through quick wins as you eliminate smaller debts first.</p>
+                                    <p><strong>Advantage:</strong> Provides psychological motivation as you see debts being paid off faster.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="investment-calculator" class="help-section">
+                    <h2>Investment Calculator Guide</h2>
+                    <p>The Investment Calculator helps you project how your investments might grow over time with compound interest.</p>
+                    
+                    <div class="help-card">
+                        <h3>How to Use the Investment Calculator</h3>
+                        <div class="step-guide">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Enter Initial Investment</h4>
+                                    <p>Enter the amount you're starting with (can be zero if you're starting from scratch).</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Set Monthly Contribution</h4>
+                                    <p>Enter how much you plan to add to your investment each month.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Specify Expected Return</h4>
+                                    <p>Enter your expected annual return rate (%). You can use the slider to adjust this value.</p>
+                                    <div class="help-image">
+                                        <img src="images/investment-return.jpg" alt="Expected Return">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Set Investment Period</h4>
+                                    <p>Enter how many years you plan to invest for.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <h4>Choose Compound Frequency</h4>
+                                    <p>Select how often your investment compounds (monthly, quarterly, or annually).</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">6</div>
+                                <div class="step-content">
+                                    <h4>Calculate Growth</h4>
+                                    <p>Click "Calculate" to see how your investment might grow over time.</p>
+                                    <div class="help-image">
+                                        <img src="images/investment-results.jpg" alt="Investment Results">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="help-card">
+                        <h3>Understanding the Results</h3>
+                        <p>The investment calculator provides several key pieces of information:</p>
+                        <ul>
+                            <li><strong>Final Balance:</strong> The total value of your investment at the end of the period</li>
+                            <li><strong>Total Contributions:</strong> How much money you put in (initial + monthly contributions)</li>
+                            <li><strong>Interest Earned:</strong> How much your money grew through compound interest</li>
+                            <li><strong>Year-by-Year Breakdown:</strong> A table showing how your investment grows each year</li>
+                        </ul>
+                        <div class="tip-box">
+                            <div class="tip-icon"><i class="fas fa-lightbulb"></i></div>
+                            <div class="tip-content">
+                                <h4>Pro Tip</h4>
+                                <p>The power of compound interest works best over long periods. Even small increases in your investment period can lead to significant growth in your final balance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="data-storage" class="help-section">
+                    <h2>Data Storage</h2>
+                    <p>FinTrack is designed with your privacy in mind. Here's how we handle your data:</p>
+                    
+                    <div class="help-card">
+                        <h3>Local Storage</h3>
+                        <p>All your financial data is stored locally on your device using your browser's localStorage feature. This means:</p>
+                        <ul>
+                            <li>Your data never leaves your device</li>
+                            <li>We don't have access to your financial information</li>
+                            <li>Your data persists between sessions on the same device</li>
+                            <li>Clearing your browser data will also clear your FinTrack data</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="help-card">
+                        <h3>Backing Up Your Data</h3>
+                        <p>Since your data is stored locally, it's important to know how to back it up:</p>
+                        <div class="step-guide">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Save Your Budget/Plan</h4>
+                                    <p>Use the "Save" button in each tool to ensure your data is stored in localStorage.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Export Feature (Coming Soon)</h4>
+                                    <p>In a future update, you'll be able to export your data as CSV or PDF files for backup purposes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="privacy" class="help-section">
+                    <h2>Privacy & Security</h2>
+                    <p>We take your privacy and security seriously. Here's our approach:</p>
+                    
+                    <div class="help-card">
+                        <h3>Privacy Policy</h3>
+                        <p>FinTrack is designed to be privacy-focused:</p>
+                        <ul>
+                            <li>We don't collect any personal or financial data</li>
+                            <li>We don't use cookies to track you</li>
+                            <li>We don't have user accounts or logins</li>
+                            <li>All calculations happen on your device, not our servers</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="help-card">
+                        <h3>Security Considerations</h3>
+                        <p>While FinTrack is secure by design, here are some additional security tips:</p>
+                        <ul>
+                            <li>Don't use FinTrack on public or shared computers if you're concerned about others seeing your financial data</li>
+                            <li>Consider clearing your browser data if you've used FinTrack on a shared device</li>
+                            <li>Remember that clearing browser data will erase your saved financial information</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section id="faq" class="help-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="help-card">
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h3>Is FinTrack completely free?</h3>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>Yes, FinTrack is completely free to use. There are no hidden fees, subscriptions, or premium features.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h3>Will I lose my data if I clear my browser history?</h3>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>Yes, if you clear your browser data (specifically localStorage), you will lose your saved financial information. We recommend exporting your data regularly once that feature becomes available.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h3>Can I access my FinTrack data on multiple devices?</h3>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>Currently, your data is stored locally on each device. This means data on one device won't automatically sync to another device. We're planning to add data export/import features in the future to make this easier.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h3>How accurate are the calculators?</h3>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>Our calculators use standard financial formulas and provide reasonably accurate projections. However, real-world results may vary due to factors like changing interest rates, market fluctuations, and other variables. The calculators are best used as planning tools rather than precise predictions.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h3>Are there any limits to how much data I can store?</h3>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>The amount of data you can store is limited by your browser's localStorage capacity, which is typically around 5-10MB. This is more than enough for most users' financial data.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="troubleshooting" class="help-section">
+                    <h2>Troubleshooting</h2>
+                    <p>Encountering issues? Here are solutions to common problems:</p>
+                    
+                    <div class="help-card">
+                        <h3>Common Issues and Solutions</h3>
+                        <div class="troubleshooting-list">
+                            <div class="troubleshooting-item">
+                                <div class="issue">
+                                    <h4>Data Not Saving</h4>
+                                    <p>If your data isn't being saved between sessions:</p>
+                                </div>
+                                <div class="solution">
+                                    <ul>
+                                        <li>Make sure you're using the same browser and device</li>
+                                        <li>Check if your browser has localStorage enabled</li>
+                                        <li>Ensure you're not in private/incognito browsing mode</li>
+                                        <li>Click the "Save" button explicitly after making changes</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="troubleshooting-item">
+                                <div class="issue">
+                                    <h4>Calculations Seem Incorrect</h4>
+                                    <p>If calculator results don't seem right:</p>
+                                </div>
+                                <div class="solution">
+                                    <ul>
+                                        <li>Double-check all input values</li>
+                                        <li>Ensure you're using the correct units (e.g., percentages as numbers)</li>
+                                        <li>Try clearing and re-entering your data</li>
+                                        <li>Refresh the page and try again</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="troubleshooting-item">
+                                <div class="issue">
+                                    <h4>Charts Not Displaying</h4>
+                                    <p>If charts aren't showing up:</p>
+                                </div>
+                                <div class="solution">
+                                    <ul>
+                                        <li>Make sure you have JavaScript enabled in your browser</li>
+                                        <li>Try using a different browser</li>
+                                        <li>Ensure you have entered enough data to generate a chart</li>
+                                        <li>Refresh the page and try again</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="help-card">
+                        <h3>Contact Support</h3>
+                        <p>If you're still experiencing issues, please contact our support team:</p>
+                        <div class="contact-support">
+                            <a href="mailto:support@fintrack.com" class="btn btn-primary">
+                                <i class="fas fa-envelope"></i> Email Support
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-chart-line logo-icon"></i>
+                    <h2>FinTrack</h2>
+                    <p>Your personal finance companion</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="budgeting.html">Budgeting</a></li>
+                        <li><a href="debt-management.html">Debt Management</a></li>
+                        <li><a href="investment.html">Investment</a></li>
+                        <li><a href="help.html">Help & Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-tools">
+                    <h3>Our Tools</h3>
+                    <ul>
+                        <li><a href="budgeting.html">Budget Planner</a></li>
+                        <li><a href="debt-management.html">Debt Calculator</a></li>
+                        <li><a href="investment.html">Investment Calculator</a></li>
+                        <li><a href="#">Goal Tracker (Coming Soon)</a></li>
+                        <li><a href="#">Reports (Coming Soon)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@fintrack.com</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2023</span> FinTrack. All rights reserved.</p>
+                <ul class="footer-bottom-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <button id="back-to-top" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+    <script src="animations.js"></script>
+    <script>
+        // Help page specific script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sidebar navigation
+            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+            const sections = document.querySelectorAll('.help-section');
+            
+            // Highlight active section in sidebar
+            function setActiveSection() {
+                let currentSection = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (window.scrollY >= (sectionTop - 200)) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+                
+                sidebarLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#₹{currentSection}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', setActiveSection);
+            
+            // Smooth scroll to sections
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update URL hash without jumping
+                    history.pushState(null, null, targetId);
+                    
+                    // Set active class
+                    sidebarLinks.forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Accordion functionality
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                const content = item.querySelector('.accordion-content');
+                
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    }
+                });
+            });
+            
+            // Check if URL has a hash and scroll to that section
+            if (window.location.hash) {
+                const targetSection = document.querySelector(window.location.hash);
+                if (targetSection) {
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Set active class in sidebar
+                        sidebarLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === window.location.hash) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }, 500);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

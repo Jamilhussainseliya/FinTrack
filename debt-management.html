@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debt Management - FinTrack</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-chart-line logo-icon"></i>
+                <h1>FinTrack</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="budgeting.html">Budgeting</a></li>
+                    <li><a href="debt-management.html" class="active">Debt Management</a></li>
+                    <li><a href="investment.html">Investment</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Debt Management</h1>
+            <p>Plan your debt repayment strategy and become debt-free faster.</p>
+        </div>
+    </section>
+
+    <section class="debt-tool">
+        <div class="container">
+            <div class="debt-wrapper">
+                <div class="debt-sidebar">
+                    <div class="debt-summary" id="debt-summary">
+                        <h3>Debt Summary</h3>
+                        <div class="summary-item">
+                            <span>Total Debt:</span>
+                            <span id="total-debt">₹0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Monthly Payment:</span>
+                            <span id="monthly-payment">₹0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Time to Debt-Free:</span>
+                            <span id="debt-free-time">0 months</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Total Interest Paid:</span>
+                            <span id="total-interest">₹0</span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="debt-chart"></canvas>
+                        </div>
+                        <div class="strategy-selector">
+                            <h4>Repayment Strategy</h4>
+                            <div class="radio-group">
+                                <input type="radio" id="avalanche" name="strategy" value="avalanche" checked>
+                                <label for="avalanche">Avalanche (Highest Interest First)</label>
+                            </div>
+                            <div class="radio-group">
+                                <input type="radio" id="snowball" name="strategy" value="snowball">
+                                <label for="snowball">Snowball (Smallest Balance First)</label>
+                            </div>
+                        </div>
+                        <button id="calculate-payoff" class="btn btn-secondary">Calculate Pay Off</button>
+                        <button id="save-debt" class="btn btn-secondary">Save Plan</button>
+                        <button onclick="exportToPDF()" class="btn btn-primary">Download as PDF</button>
+                        <button id="clear-debt" class="btn btn-secondary">Clear All</button>
+                    </div>
+                </div>
+                <div class="debt-content">
+                    <div class="debt-form-container">
+                        <h3>Add Your Debts</h3>
+                        <form id="debt-form">
+                            <div class="form-group">
+                                <label for="debt-name">Debt Name</label>
+                                <input type="text" id="debt-name" placeholder="e.g., Credit Card, Student Loan" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="debt-balance">Current Balance (₹)</label>
+                                <input type="number" id="debt-balance" placeholder="Enter current balance" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="debt-interest">Interest Rate (%)</label>
+                                <input type="number" id="debt-interest" step="0.1" placeholder="Enter annual interest rate" required>
+                            </div>                            <div class="form-group">
+                                <label for="debt-payment">Minimum Payment (₹)</label>
+                                <input type="number" id="debt-payment" placeholder="Enter minimum monthly payment" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Add Debt</button>
+                        </form>
+                    </div>
+                    <div class="debt-list-container">
+                        <h3>Your Debts</h3>
+                        <div class="item-list" id="debt-list">
+                            <!-- Debt items will be added here dynamically -->
+                        </div>
+                    </div>
+                    <div class="extra-payment-container">
+                        <h3>Extra Payment</h3>
+                        <div class="form-group">
+                            <label for="extra-payment">Additional Monthly Payment (₹)</label>
+                            <input type="number" id="extra-payment" placeholder="Enter additional amount">
+                            <p class="help-text">Any extra payment will be applied according to your selected strategy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>FinTrack</h2>
+                    <p>Your personal finance companion</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="budgeting.html">Budgeting</a></li>
+                        <li><a href="debt-management.html">Debt Management</a></li>
+                        <li><a href="investment.html">Investment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@fintrack.com</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FinTrack. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="main.js"></script>
+    <script src="debt.js"></script>
+
+    <script>
+        async function exportToPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Debt Summary
+            const totalDebt = document.getElementById("total-debt").textContent || "₹0";
+            const monthlyPayment = document.getElementById("monthly-payment").textContent || "₹0";
+            const debtFreeTime = document.getElementById("debt-free-time").textContent || "0 months";
+            const totalInterest = document.getElementById("total-interest").textContent || "₹0";
+
+            doc.setFontSize(18);
+            doc.text("FinTrack - Debt Summary", 20, 20);
+
+            doc.setFontSize(12);
+            doc.text(`Total Debt: ₹{totalDebt}`, 20, 40);
+            doc.text(`Monthly Payment: ₹{monthlyPayment}`, 20, 50);
+            doc.text(`Debt-Free Time: ₹{debtFreeTime}`, 20, 60);
+            doc.text(`Total Interest Paid: ₹{totalInterest}`, 20, 70);
+
+            doc.save("debt-summary.pdf");
+        }
+
+        // JavaScript for handling debt calculations
+        document.getElementById('debt-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const debtName = document.getElementById('debt-name').value;
+            const debtBalance = parseFloat(document.getElementById('debt-balance').value);
+            const debtInterest = parseFloat(document.getElementById('debt-interest').value) / 100 / 12; // Monthly interest
+const debtPayment = parseFloat(document.getElementById('debt-payment').value);
+
+            // Validate inputs
+            if (isNaN(debtBalance) || isNaN(debtInterest) || isNaN(debtPayment) || debtBalance <= 0 || debtInterest < 0 || debtPayment <= 0) {
+                alert('Please enter valid positive numbers for all fields.');
+                return;
+            }
+
+            // Create a new debt item
+            const debtItem = {
+                name: debtName,
+                balance: debtBalance,
+                interest: debtInterest,
+                payment: debtPayment
+            };
+
+            // Add debt item to the list
+            addDebtToList(debtItem);
+            updateDebtSummary();
+            document.getElementById('debt-form').reset(); // Reset the form
+        });
+
+        function addDebtToList(debt) {
+            const debtList = document.getElementById('debt-list');
+            const debtElement = document.createElement('div');
+            debtElement.classList.add('debt-item');
+            debtElement.innerHTML = `
+                <span>₹{debt.name}</span>
+                <span>₹₹{debt.balance.toFixed(2)}</span>
+                <span>₹{(debt.interest * 100 * 12).toFixed(2)}%</span>
+                <span>₹₹{debt.payment.toFixed(2)}</span>
+            `;
+            debtList.appendChild(debtElement);
+        }
+
+        function updateDebtSummary() {
+            const totalDebt = Array.from(document.querySelectorAll('.debt-item')).reduce((total, item) => {
+                const balance = parseFloat(item.children[1].textContent.replace('₹', ''));
+                return total + balance;
+            }, 0);
+
+            const monthlyPayment = Array.from(document.querySelectorAll('.debt-item')).reduce((total, item) => {
+                const payment = parseFloat(item.children[3].textContent.replace('₹', ''));
+                return total + payment;
+            }, 0);
+
+            // Update the summary
+            document.getElementById('total-debt').textContent = `₹₹{totalDebt.toFixed(2)}`;
+            document.getElementById('monthly-payment').textContent = `₹₹{monthlyPayment.toFixed(2)}`;
+            document.getElementById('debt-free-time').textContent = `₹{calculateDebtFreeTime(totalDebt, monthlyPayment)} months`;
+            document.getElementById('total-interest').textContent = `₹₹{calculateTotalInterest(totalDebt, monthlyPayment).toFixed(2)}`;
+        }
+
+        function calculateDebtFreeTime(totalDebt, monthlyPayment) {
+            if (monthlyPayment <= 0) return 0;
+            return Math.ceil(totalDebt / monthlyPayment);
+        }
+
+        function calculateTotalInterest(totalDebt, monthlyPayment) {
+            // Placeholder for total interest calculation logic
+            return totalDebt * 0.05; // Example: 5% of total debt as interest
+        }
+
+        document.getElementById('clear-debt').addEventListener('click', function() {
+            document.getElementById('debt-list').innerHTML = ''; // Clear the debt list
+            updateDebtSummary(); // Reset the summary
+        });
+    </script>
+
+    <!-- Help Button -->
+    <a href="help.html" class="help-button" title="Need Help?">
+        <i class="fas fa-question-circle"></i>
+    </a>
+</body>
+
+</html>

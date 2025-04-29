@@ -1,0 +1,246 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Calculator - FinTrack</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-chart-line logo-icon"></i>
+                <h1>FinTrack</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="budgeting.html">Budgeting</a></li>
+                    <li><a href="debt-management.html">Debt Management</a></li>
+                    <li><a href="investment.html" class="active">Investment</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Investment Calculator</h1>
+            <p>Calculate potential returns and plan your investment strategy.</p>
+        </div>
+    </section>
+
+    <section class="investment-tool">
+        <div class="container">
+            <div class="investment-wrapper">
+                <div class="investment-sidebar">
+                    <div class="investment-summary" id="investment-summary">
+                        <h3>Investment Summary</h3>
+                        <div class="summary-item">
+                            <span>Initial Investment:</span>
+                            <span id="initial-investment">₹0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Total Contributions:</span>
+                            <span id="total-contributions">₹0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Total Interest Earned:</span>
+                            <span id="total-interest-earned">₹0</span>
+                        </div>
+                        <div class="summary-item highlight">
+                            <span>Final Balance:</span>
+                            <span id="final-balance">₹0</span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="investment-chart"></canvas>
+                        </div>
+                        <button id="save-investment" class="btn btn-primary">Save Plan</button>
+                        <button onclick="exportToPDF()" class="btn btn-primary">Download as PDF</button>
+                        <button id="clear-investment" class="btn btn-secondary">Reset</button>
+                    </div>
+                </div>
+                <div class="investment-content">
+                    <div class="investment-form-container">
+                        <h3>Investment Calculator</h3>
+                        <form id="investment-form">
+                            <div class="form-group">
+                                <label for="initial-amount">Initial Investment (₹)</label>
+                                <input type="number" id="initial-amount" placeholder="Enter initial investment amount" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="monthly-contribution">Monthly Contribution (₹)</label>
+                                <input type="number" id="monthly-contribution" placeholder="Enter monthly contribution" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="annual-return">Expected Annual Return (%)</label>
+                                <input type="number" id="annual-return" step="0.1" placeholder="Enter expected annual return" required>
+                                <div class="range-slider">
+                                    <input type="range" min="1" max="15" value="7" step="0.1" id="return-slider">
+                                    <div class="range-labels">
+                                        <span>1%</span>
+                                        <span>15%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="investment-period">Investment Period (Years)</label>
+                                <input type="number" id="investment-period" placeholder="Enter investment period" required>
+                                <div class="range-slider">
+                                    <input type="range" min="1" max="40" value="10" id="period-slider">
+                                    <div class="range-labels">
+                                        <span>1yr</span>
+                                        <span>40yrs</span>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="compound-frequency">Compound Frequency</label>
+                                    <select id="compound-frequency" required>
+                                        <option value="12">Monthly</option>
+                                        <option value="4">Quarterly</option>
+                                        <option value="1">Annually</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Calculate</button>
+                            </form>
+                        </div>
+                        <div class="investment-results">
+                            <h3>Year-by-Year Breakdown</h3>
+                            <div class="table-container">
+                                <table id="investment-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Year</th>
+                                            <th>Starting Balance</th>
+                                            <th>Contributions</th>
+                                            <th>Interest Earned</th>
+                                            <th>Ending Balance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Table rows will be added dynamically -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h2>FinTrack</h2>
+                        <p>Your personal finance companion</p>
+                    </div>
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="budgeting.html">Budgeting</a></li>
+                            <li><a href="debt-management.html">Debt Management</a></li>
+                            <li><a href="investment.html">Investment</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h3>Contact Us</h3>
+                        <p><i class="fas fa-envelope"></i> support@fintrack.com</p>
+                        <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2023 FinTrack. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="main.js"></script>
+        <script src="investment.js"></script>
+    
+        <script>
+            async function exportToPDF() {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+    
+                // Example content from Investment Summary
+                const totalIncome = document.getElementById("total-income")?.textContent || "₹0";
+                const totalExpenses = document.getElementById("total-expenses")?.textContent || "₹0";
+                const balance = document.getElementById("balance")?.textContent || "₹0";
+    
+                doc.setFontSize(18);
+                doc.text("FinTrack - Investment Summary", 20, 20);
+    
+                doc.setFontSize(12);
+                doc.text(`Total Income: ₹{totalIncome}`, 20, 40);
+                doc.text(`Total Expenses: ₹{totalExpenses}`, 20, 50);
+                doc.text(`Balance: ₹{balance}`, 20, 60);
+    
+                doc.save("investment-summary.pdf");
+            }
+        </script>
+    
+        <!-- Help Button -->
+        <a href="help.html" class="help-button" title="Need Help?">
+            <i class="fas fa-question-circle"></i>
+        </a>
+    
+        <!-- Code injected by live-server -->
+        <script>
+            // <![CDATA[  <-- For SVG support
+            if ('WebSocket' in window) {
+                (function () {
+                    function refreshCSS() {
+                        var sheets = [].slice.call(document.getElementsByTagName("link"));
+                        var head = document.getElementsByTagName("head")[0];
+                        for (var i = 0; i < sheets.length; ++i) {
+                            var elem = sheets[i];
+                            var parent = elem.parentElement || head;
+                            parent.removeChild(elem);  var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        } else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+</body>
+</html>

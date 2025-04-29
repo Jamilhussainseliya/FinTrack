@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <meta name="description" content="FinTrack: A privacy-focused personal finance tracker for budgeting, debt, and investments.">
+    <title>FinTrack - Personal Finance & Budgeting</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <svg viewBox="0 0 80 80">
+                <circle id="loader-circle" cx="40" cy="40" r="32"></circle>
+            </svg>
+            <div class="loader-text">FinTrack</div>
+        </div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="toggle-ball"></div>
+    </div>
+
+    <!-- Help Button -->
+    <div class="help-button">
+        <i class="fas fa-question-circle"></i>
+        <span class="tooltip">Help & Guide</span>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-chart-line logo-icon"></i>
+                <h1>FinTrack</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="budgeting.html">Budgeting</a></li>
+                    <li><a href="debt-management.html">Debt</a></li>
+                    <li><a href="investment.html">Investment</a></li>
+                    <li><a href="help.html">Help</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="budgeting.html">Budgeting</a></li>
+            <li><a href="debt-management.html">Debt Management</a></li>
+            <li><a href="investment.html">Investment</a></li>
+            <li><a href="help.html">Help & Guide</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animate-text">Take Control of Your <span class="highlight">Financial Future</span></h1>
+                <p class="animate-text-delay">Track expenses, manage debt, and plan investments all in one place.</p>
+                <div class="hero-buttons animate-text-delay-2">
+                    <a href="budgeting.html" class="btn btn-primary">Start Budgeting Now</a>
+                    <a href="help.html" class="btn btn-outline">Learn How It Works</a>
+                </div>
+                <div class="hero-stats animate-text-delay-3">
+                    <div class="stat">
+                        <span class="stat-number" data-count="10000">0</span>
+                        <span class="stat-label">Happy Users</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="5">0</span>
+                        <span class="stat-label">Financial Tools</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="100">0</span>
+                        <span class="stat-label">% Free</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <img src="images/mainhomepage.png" alt="Financial Planning Illustration">
+                    <div class="floating-icon icon-1"><i class="fas fa-dollar-sign"></i></div>
+                    <div class="floating-icon icon-2"><i class="fas fa-chart-pie"></i></div>
+                    <div class="floating-icon icon-3"><i class="fas fa-piggy-bank"></i></div>
+                    <div class="floating-icon icon-4"><i class="fas fa-chart-line"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Powerful Financial Tools</h2>
+                <p>Everything you need to manage your finances in one place</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Budget Planner</h3>
+                    <p>Create and manage your monthly budget with our easy-to-use tool.</p>
+                    <a href="budgeting.html" class="btn btn-secondary">Try Now</a>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Debt Calculator</h3>
+                    <p>Plan your debt repayment strategy and become debt-free faster.</p>
+                    <a href="debt-management.html" class="btn btn-secondary">Try Now</a>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Investment Planner</h3>
+                    <p>Calculate potential returns and plan your investment strategy.</p>
+                    <a href="investment.html" class="btn btn-secondary">Try Now</a>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Goal Tracker</h3>
+                    <p>Set financial goals and track your progress over time.</p>
+                    <a href="#" class="btn btn-secondary">Coming Soon</a>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-export"></i>
+                    </div>
+                    <h3>Export Reports</h3>
+                    <p>Download and share your financial reports in multiple formats.</p>
+                    <a href="#" class="btn btn-secondary">Coming Soon</a>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure & Private</h3>
+                    <p>Your financial data is stored locally and never shared with third parties.</p>
+                    <a href="help.html#privacy" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Calculator Section -->
+    <section class="quick-calculator">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quick Budget Calculator</h2>
+                <p>Get a quick overview of your monthly budget</p>
+            </div>
+            <div class="calculator-wrapper">
+                <div class="calculator-form" data-aos="fade-right">
+                    <div class="form-group">
+                        <label for="quick-income">Monthly Income (₹)</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                            <input type="number" id="quick-income" placeholder="Enter your monthly income">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="quick-expenses">Monthly Expenses (₹)</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <input type="number" id="quick-expenses" placeholder="Enter your monthly expenses">
+                        </div>
+                    </div>
+                    <button id="calculate-quick" class="btn btn-primary btn-block">
+                        <i class="fas fa-calculator"></i> Calculate
+                    </button>
+                </div>
+                <div class="calculator-result" id="quick-result" data-aos="fade-left">
+                    <div class="result-card">
+                        <h3>Monthly Balance</h3>
+                        <p class="balance-amount">₹0</p>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 0%"></div>
+                            </div>
+                            <div class="progress-labels">
+                                <span>Expenses</span>
+                                <span>Income</span>
+                            </div>
+                        </div>
+                        <div class="result-message">Enter your income and expenses to see your monthly balance.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Simple steps to take control of your finances</p>
+            </div>
+            <div class="steps">
+                <div class="step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Track Your Income</h3>
+                        <p>Add all your income sources to get a clear picture of your monthly earnings.</p>
+                    </div>
+                </div>
+                <div class="step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Monitor Expenses</h3>
+                        <p>Categorize and track your expenses to understand your spending habits.</p>
+                    </div>
+                </div>
+                <div class="step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Plan Debt Repayment</h3>
+                        <p>Use our debt calculator to create an effective repayment strategy.</p>
+                    </div>
+                </div>
+                <div class="step" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Grow Your Investments</h3>
+                        <p>Plan your investment strategy and watch your wealth grow over time.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cta-container" data-aos="fade-up" data-aos-delay="500">
+                <a href="help.html" class="btn btn-primary">View Detailed Guide</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Users Say</h2>
+                <p>Success stories from people who took control of their finances</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-slides">
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-content">
+                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <p>"FinTrack helped me pay off ₹15,000 in debt in just 18 months. The debt calculator was a game-changer for planning my strategy!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <img src="images/Sarah Johnson.png" alt="Sarah Johnson">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Sarah Johnson</h4>
+                                    <p>Debt-free since 2022</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <p>"I've tried many budgeting apps, but FinTrack is by far the most intuitive and helpful. I can finally save for my dream vacation!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <img src="images/Michael Chen.jpeg" alt="Michael Chen">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Michael Chen</h4>
+                                    <p>Saving for goals since 2021</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <p>"The investment calculator helped me understand how much I need to save for retirement. Now I have a clear plan for my future!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <img src="images/emily.png" alt="Emily Rodriguez">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Emily Rodriguez</h4>
+                                    <p>Planning for retirement</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <div class="testimonial-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Take Control of Your Finances?</h2>
+                <p>Start using our free tools today and build a better financial future.</p>
+                <div class="cta-buttons">
+                    <a href="budgeting.html" class="btn btn-primary">Get Started Now</a>
+                    <a href="help.html" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-chart-line logo-icon"></i>
+                    <h2>FinTrack</h2>
+                    <p>Your personal finance companion</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="budgeting.html">Budgeting</a></li>
+                        <li><a href="debt-management.html">Debt Management</a></li>
+                        <li><a href="investment.html">Investment</a></li>
+                        <li><a href="help.html">Help & Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-tools">
+                    <h3>Our Tools</h3>
+                    <ul>
+                        <li><a href="budgeting.html">Budget Planner</a></li>
+                        <li><a href="debt-management.html">Debt Calculator</a></li>
+                        <li><a href="investment.html">Investment Calculator</a></li>
+                        <li><a href="#">Goal Tracker (Coming Soon)</a></li>
+                        <li><a href="#">Reports (Coming Soon)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@fintrack.com</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2023</span> FinTrack. All rights reserved.</p>
+                <ul class="footer-bottom-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <button id="back-to-top" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <!-- Help Modal -->
+    <div class="help-modal" id="help-modal">
+        <div class="help-modal-content">
+            <div class="help-modal-header">
+                <h3>Quick Help Guide</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="help-modal-body">
+                <div class="help-section">
+                    <h4>Getting Started</h4>
+                    <p>Welcome to FinTrack! Here's how to get started:</p>
+                    <ul>
+                        <li>Use the <strong>Budget Planner</strong> to track your income and expenses</li>
+                        <li>Try the <strong>Debt Calculator</strong> to plan your debt repayment strategy</li>
+                        <li>Use the <strong>Investment Calculator</strong> to plan your investments</li>
+                    </ul>
+                </div>
+                <div class="help-section">
+                    <h4>Data Storage</h4>
+                    <p>All your data is stored locally on your device. We don't collect or store any of your financial information on our servers.</p>
+                </div>
+                <div class="help-section">
+                    <h4>Need More Help?</h4>
+                    <p>Check out our detailed <a href="help.html">Help & Guide</a> page for comprehensive instructions on using all our tools.</p>
+                </div>
+            </div>
+            <div class="help-modal-footer">
+                <button class="btn btn-primary close-modal">Got It!</button>
+                <a href="help.html" class="btn btn-outline">Detailed Guide</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="main.js"></script>
+    <script src="animations.js"></script>
+
+    <!-- Help Button -->
+<a href="help.html" class="help-button" title="Need Help?">
+    <i class="fas fa-question-circle"></i>
+  </a>
+  
+</body>
+</html>

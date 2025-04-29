@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Planner - FinTrack</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-chart-line logo-icon"></i>
+                <h1>FinTrack</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="budgeting.html" class="active">Budgeting</a></li>
+                    <li><a href="debt-management.html">Debt Management</a></li>
+                    <li><a href="investment.html">Investment</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Budget Planner</h1>
+            <p>Create and manage your monthly budget with our easy-to-use tool.</p>
+        </div>
+    </section>
+
+    <section class="budget-tool">
+        <div class="container">
+            <div class="budget-wrapper">
+                <div class="budget-sidebar">
+                    <div class="budget-summary" id="budget-summary">
+                        <h3>Budget Summary</h3>
+                        <div class="summary-item">
+                            <span>Total Income:</span>
+                            <span id="total-income">₹0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Total Expenses:</span>
+                            <span id="total-expenses">₹0</span>
+                        </div>
+                        <div class="summary-item balance">
+                            <span>Balance:</span>
+                            <span id="balance">₹0</span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="expense-chart"></canvas>
+                        </div>
+                        <button id="save-budget" class="btn btn-primary">Save Budget</button>
+                        <button onclick="exportToPDF()" class="btn btn-primary">Download as PDF</button>
+
+                        <button id="clear-budget" class="btn btn-secondary">Clear Budget</button>
+                    </div>
+                </div>
+                <div class="budget-content">
+                    <div class="budget-tabs">
+                        <button class="tab-btn active" data-tab="income">Income</button>
+                        <button class="tab-btn" data-tab="expenses">Expenses</button>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="income-tab">
+                            <h3>Income Sources</h3>
+                            <form id="income-form">
+                                <div class="form-group">
+                                    <label for="income-name">Source Name</label>
+                                    <input type="text" id="income-name" placeholder="e.g., Salary, Freelance">
+                                </div>
+                                <div class="form-group">
+                                    <label for="income-amount">Amount (₹)</label>
+                                    <input type="number" id="income-amount" placeholder="Enter amount">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Add Income</button>
+                            </form>
+                            <div class="item-list" id="income-list">
+                                <!-- Income items will be added here dynamically -->
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="expenses-tab">
+                            <h3>Expense Categories</h3>
+                            <form id="expense-form">
+                                <div class="form-group">
+                                    <label for="expense-category">Category</label>
+                                    <select id="expense-category">
+                                        <option value="housing">Housing</option>
+                                        <option value="transportation">Transportation</option>
+                                        <option value="food">Food</option>
+                                        <option value="utilities">Utilities</option>
+                                        <option value="healthcare">Healthcare</option>
+                                        <option value="entertainment">Entertainment</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="expense-name">Expense Name</label>
+                                    <input type="text" id="expense-name" placeholder="e.g., Rent, Groceries">
+                                </div>
+                                <div class="form-group">
+                                    <label for="expense-amount">Amount (₹)</label>
+                                    <input type="number" id="expense-amount" placeholder="Enter amount">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Add Expense</button>
+                            </form>
+                            <div class="item-list" id="expense-list">
+                                <!-- Expense items will be added here dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>FinTrack</h2>
+                    <p>Your personal finance companion</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="budgeting.html">Budgeting</a></li>
+                        <li><a href="debt-management.html">Debt Management</a></li>
+                        <li><a href="investment.html">Investment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@fintrack.com</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FinTrack. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="main.js"></script>
+
+    
+    <script src="budget.js"></script>
+
+    <script>
+        async function exportToPDF() {
+          const { jsPDF } = window.jspdf;
+          const doc = new jsPDF();
+      
+          // Example content from Budget Summary
+          const totalIncome = document.getElementById("total-income")?.textContent || "₹0";
+          const totalExpenses = document.getElementById("total-expenses")?.textContent || "₹0";
+          const balance = document.getElementById("balance")?.textContent || "₹0";
+      
+          doc.setFontSize(18);
+          doc.text("FinTrack - Budget Summary", 20, 20);
+      
+          doc.setFontSize(12);
+          doc.text(`Total Income: ₹{totalIncome}`, 20, 40);
+          doc.text(`Total Expenses: ₹{totalExpenses}`, 20, 50);
+          doc.text(`Balance: ₹{balance}`, 20, 60);
+      
+          doc.save("budget-summary.pdf");
+        }
+      </script>
+      <!-- Help Button -->
+<a href="help.html" class="help-button" title="Need Help?">
+    <i class="fas fa-question-circle"></i>
+  </a>
+  
+</body>
+</html>
